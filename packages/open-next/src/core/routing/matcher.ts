@@ -411,6 +411,7 @@ export function fixDataPage(
       ...internalEvent,
       rawPath: newPath,
       query,
+      headers: { ...internalEvent.headers, "x-nextjs-data": "1" },
       url: new URL(
         `${newPath}${convertToQueryString(query)}`,
         internalEvent.url,
